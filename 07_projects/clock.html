@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Digital clock</title>
+
+  <!Tailwind CDN>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-900 flex items-center justify-center h-screen">
+
+  <div class="bg-gray-800 p-8 rounded-2xl shadow-xl text-center">
+    
+    <h1 class="text-white text-2xl font-bold mb-4">Digital clock</h1>
+
+    <div 
+      id="clock" 
+      class="text-4xl font-mono text-green-400 bg-black px-6 py-4 rounded-lg tracking-widest"
+    >
+      00:00:00
+    </div>
+
+  </div>
+
+</body>
+
+<script>
+const clock = document.getElementById('clock');
+
+setInterval(function(){
+    let date = new Date();
+    clock.innerHTML = date.toLocaleTimeString();
+}, 1000);
+</script>
+
+</html>
