@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Events & event Listener  </title>
+
+  <!-- Tailwind -->
+
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-900 text-white flex flex-col items-center justify-center h-screen gap-6">
+
+  <h1 class="text-3xl font-bold">Event Listener</h1>
+
+  <!-- Buttons -->
+  <div class="flex gap-4">
+    <button id="red" class="btn bg-red-500 px-6 py-2 rounded">Red</button>
+    <button id="green" class="btn bg-green-500 px-6 py-2 rounded">Green</button>
+    <button id="blue" class="btn bg-blue-500 px-6 py-2 rounded">Blue</button>
+  </div>
+
+  <!-- Input -->
+  <input 
+    id="nameInput"
+    type="text"
+    placeholder="Type your name"
+    class="p-2 rounded text-black"
+  >
+
+  <!-- Output -->
+  <p id="output" class="text-lg"></p>
+
+</body>
+
+<script>
+
+// SELECT ELEMENTS
+const buttons = document.querySelectorAll('.btn');
+const body = document.querySelector('body');
+const input = document.querySelector('#nameInput');
+const output = document.querySelector('#output');
+
+
+// CLICK EVENT (Buttons)
+
+buttons.forEach(function(button){
+
+    button.addEventListener('click', function(e){
+
+        // change background color
+        body.style.backgroundColor = e.target.id;
+
+        // show message
+        output.innerHTML = `You clicked ${e.target.id} button`;
+
+    });
+
+});
+
+
+// INPUT EVENT (Typing)
+
+
+input.addEventListener('input', function(e){
+
+    output.innerHTML = `Typing: ${e.target.value}`;
+
+});
+
+
+// KEYDOWN EVENT (Keyboard)
+
+input.addEventListener('keydown', function(e){
+
+    console.log(`Key pressed: ${e.key}`);
+
+});
+
+</script>
+
+</html>
