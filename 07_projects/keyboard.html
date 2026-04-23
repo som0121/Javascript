@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Keyboard Key Detector</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-900 text-white flex items-center justify-center h-screen">
+
+  <div class="bg-gray-800 p-8 rounded-2xl shadow-xl text-center w-[600px]">
+
+    <h1 class="text-2xl font-bold mb-6">
+      Press Any Key
+    </h1>
+
+    <div id="insert" class="text-lg">
+      <p class="text-gray-300">Press any key on your keyboard...</p>
+    </div>
+
+  </div>
+
+</body>
+
+<script>
+
+const insert = document.getElementById('insert');
+
+window.addEventListener('keydown', (e) => {
+
+    insert.innerHTML = `
+    <div class="overflow-x-auto">
+
+      <table class="w-full border border-gray-600 text-center">
+
+        <tr class="bg-gray-700">
+          <th class="border border-gray-600 p-3">Key</th>
+          <th class="border border-gray-600 p-3">KeyCode</th>
+          <th class="border border-gray-600 p-3">Code</th>
+        </tr>
+
+        <tr>
+          <td class="border border-gray-600 p-3">
+            ${e.key === ' ' ? 'Space' : e.key}
+          </td>
+
+          <td class="border border-gray-600 p-3">
+            ${e.keyCode}
+          </td>
+
+          <td class="border border-gray-600 p-3">
+            ${e.code}
+          </td>
+        </tr>
+
+      </table>
+
+    </div>
+    `;
+});
+
+</script>
+
+</html>
