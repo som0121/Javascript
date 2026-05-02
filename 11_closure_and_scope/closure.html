@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>closure and scope</title>
+</head>
+<body>
+    
+</body>
+
+<script>
+
+    function outer(){
+
+        let username = "Som"
+        
+        function inner(){
+            console.log("inner", username);
+        }
+
+        function innerTwo(){
+
+            console.log("inner Two",username);
+        }
+        inner()
+        innerTwo()
+    }
+    outer()
+    console.log("OUTER", username);
+
+
+
+
+
+</script>
+</html>
