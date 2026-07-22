@@ -9,4 +9,4 @@ console.log(`value of x2 is ${x}`);
 
 function abc(){
 
-}
+} 
