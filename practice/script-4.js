@@ -1,4 +1,4 @@
-// objects
+// objects literals
 
 const person = {
 
