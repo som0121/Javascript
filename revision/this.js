@@ -25,3 +25,17 @@ const obj = {
 obj.regularFunction();
 obj.arrowFunction();
 obj.delayedGreeting();
+
+const person1 = {name: "Som"};
+const person2 = {name:"Rahul"};
+
+function greet(greeting,punctuation){
+    console.log(`${greeting}, ${this.name}${punctuation}`);
+
+}
+
+greet.call(person1,'Hello',"!"); // Hello, Som !
+greet.apply(person2,["Hi","?"]); // Hi, Rahul?
+
+const boundGreet = greet.bind(person1,"hey");
+boundGreet("....")
